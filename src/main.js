@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const appContainer = document.getElementById('app');
   let bottlesRemoved = 0;
 
-  const logo = '<img src="/src/images/logo.avif" alt="Logo" class="logo" onClick="window.location.href=\'https://oceanbottle.co/\'" />';  // Update the logo URL as per your path
+  const logo = '<img src="../public/images/logo.avif" alt="Logo" class="logo" onClick="window.location.href=\'https://oceanbottle.co/\'" />';  // Update the logo URL as per your path
 
   const firstScreen = `
     <div id="first-screen" class="screen">
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="drag-container" class="dragpart hidden">
         <div id="bottle-container" class="drag-area">
           <div id="ocean-bottle" class="draggable" draggable="true">
-            <img src="/src/images/bottle.png" class="bottleimage">
+            <img src="../public/images/bottle.png" class="bottleimage">
           </div>
         </div>
         <div id="cart" class="cart" ondrop="drop(event)" ondragover="allowDrop(event)">
