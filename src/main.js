@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="../Images/bottle.png" class="bottleimage">
           </div>
         </div>
+        <img src = "./Images/arrow.png" class = "arrow">
         <div id="cart" class="cart" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div>
       </div>
-            <h4 id="drag-instructions" class="hidden">But it doesn't have to stay like this. See how OceanBottle can transform your impact. Drag it to your cart.</h4>
-
+      <h4 id="drag-instructions" class="hidden">But it doesn't have to stay like this. See how OceanBottle can transform your impact. Drag it to your cart.</h4>
       </div>
     </div>
   `;
