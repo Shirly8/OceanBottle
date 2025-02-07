@@ -212,3 +212,10 @@ button:hover {
     opacity: 1;
   }
 }
+
+.bottom{
+  position: fixed;
+  right: 2%;
+  bottom: 0px;
+  
+}

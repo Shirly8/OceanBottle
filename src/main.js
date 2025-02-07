@@ -11,10 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
     <div id="first-screen" class="screen">
       ${logo}
       <div class="center">
-        <h1>How many plastic water bottles do you use per month?</h1>
+        <h1>How many plastic water bottles do you use per montsh?</h1>
         <input type="number" id="bottle-input" placeholder="Enter number of bottles" />
         <button id="submit-button">OK</button>
       </div>
+      <p class = "bottom"> Created by Shirley Huang (BUSI 3102)</>
     </div>
   `;
 
@@ -39,7 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
       <h4 id="drag-instructions" class="hidden">But it doesn't have to stay like this. See how OceanBottle can transform your impact. Drag it to your cart.</h4>
+            <p class = "bottom"> Created by Shirley Huang (BUSI 3102)</>
+
       </div>
+      
     </div>
   `;
 
