@@ -85,7 +85,7 @@ h1, h2, h3, h4 {
   background-position: center;
   overflow: hidden;
   position: relative;
-  padding-top: 60px;
+  padding-top: 20px;
   box-sizing: border-box;
 }
 
@@ -254,7 +254,7 @@ button:hover {
 
 #message-container {
   text-align: center;
-  padding: 15px 20px 0 20px;
+  padding: 80px 20px 0 20px;
   animation: slideInDown 0.8s ease-out;
   flex: 0;
 }
