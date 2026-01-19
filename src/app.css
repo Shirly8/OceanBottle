@@ -125,12 +125,13 @@ h4 {
   font-size: 1.1rem;
   color: #ffffff;
   font-weight: 600;
-  margin: 20px 0 0 0;
+  margin: 10px 0 0 0;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   letter-spacing: 0.5px;
   max-width: 85%;
   text-align: center;
   flex: 0;
+  padding: 0 20px;
 }
 
 input {
@@ -253,14 +254,14 @@ button:hover {
 
 #message-container {
   text-align: center;
-  padding: 30px 20px 0 20px;
+  padding: 15px 20px 0 20px;
   animation: slideInDown 0.8s ease-out;
   flex: 0;
 }
 
 #message-container2 {
   flex: 0;
-  padding: 30px 20px;
+  padding: 15px 20px 10px 20px;
 }
 
 #calculated-impact {
@@ -277,10 +278,10 @@ button:hover {
   align-items: center;
   justify-content: center;
   gap: 500px;
-  padding: 60px 20px;
-  margin: 40px 0 0 0;
+  padding: 10px 20px;
+  margin: 0;
   animation: slideInUp 0.8s ease-out;
-  flex: 1;
+  flex: 0.8;
 }
 
 
