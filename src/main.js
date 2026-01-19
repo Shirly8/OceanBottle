@@ -44,6 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   `;
 
+  const thirdScreen = `
+    <div id="third-screen" class="screen" style="width: 100vw; height: 100vh; padding: 0; margin: 0; overflow: auto; display: flex; flex-direction: column;">
+      <iframe style="width: 100%; min-height: 100%; border: none; padding: 0; margin: 0; flex: 1;"
+        src="https://www.canva.com/design/DAGdajMIf_k/ogzpkEWT--Tm9hg9u3vYUQ/view?embed" allowfullscreen>
+      </iframe>
+    </div>
+  `;
+
   appContainer.innerHTML = firstScreen;
 
   // Ensure video plays with better handling
@@ -161,8 +169,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Check if dropped on cart or inside cart
     if (dropzone.id === 'cart' || dropzone.closest('#cart')) {
-      // Successfully dropped bottle into cart - redirect to purchase
-      window.location.href = 'https://shirleyproject.my.canva.site/oceanbottle';
+      // Successfully dropped bottle into cart - show Canva embed
+      appContainer.innerHTML = thirdScreen;
+
+      // Show the third screen
+      const thirdScreenEl = document.getElementById('third-screen');
+      if (thirdScreenEl) {
+        thirdScreenEl.classList.remove('hidden');
+      }
     }
   };
 });

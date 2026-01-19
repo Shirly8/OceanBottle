@@ -248,8 +248,13 @@ button:hover {
 }
 
 #third-screen {
-  margin-top: 40px;
-  background-color: transparent;
+  display: flex !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: #ffffff;
+  position: relative;
 }
 
 #message-container {
