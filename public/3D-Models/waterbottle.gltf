@@ -1,0 +1,474 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 10444,
+      "max": [
+        1.0494656562805176,
+        5.206017017364502,
+        1.0494656562805176
+      ],
+      "min": [
+        -1.0494656562805176,
+        -1.0,
+        -1.0494656562805176
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 125328,
+      "componentType": 5126,
+      "count": 10444,
+      "max": [
+        1.0,
+        0.9958000779151917,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 10444,
+      "max": [
+        1.0000016689300537,
+        0.9899990558624268
+      ],
+      "min": [
+        -1.6311543049596366e-06,
+        -1.1920928955078125e-07
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 52962,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 250656,
+      "componentType": 5126,
+      "count": 1226,
+      "max": [
+        1.2857600450515747,
+        0.9362560510635376,
+        1.2857600450515747
+      ],
+      "min": [
+        -1.2857600450515747,
+        -0.9662023782730103,
+        -1.2857600450515747
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 265368,
+      "componentType": 5126,
+      "count": 1226,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 83552,
+      "componentType": 5126,
+      "count": 1226,
+      "max": [
+        1.0,
+        0.9899501800537109
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 211848,
+      "componentType": 5125,
+      "count": 4212,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 280080,
+      "componentType": 5126,
+      "count": 8771,
+      "max": [
+        1.0494656562805176,
+        4.140157222747803,
+        1.0494656562805176
+      ],
+      "min": [
+        -1.0494656562805176,
+        -1.0,
+        -1.0494656562805176
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 385332,
+      "componentType": 5126,
+      "count": 8771,
+      "max": [
+        1.0,
+        0.9970011115074158,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 93360,
+      "componentType": 5126,
+      "count": 8771,
+      "max": [
+        1.0000005960464478,
+        0.9896499514579773
+      ],
+      "min": [
+        -4.7589549012627685e-07,
+        -1.1920928955078125e-07
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 228696,
+      "componentType": 5125,
+      "count": 43938,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Shyam (https://sketchfab.com/chinchankarshyam3)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/water-bottle-918b106cee824b8886951889b7c64b98",
+      "title": "water bottle"
+    },
+    "generator": "Sketchfab-16.64.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 404448,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 163528,
+      "byteOffset": 404448,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 490584,
+      "byteOffset": 567976,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 1058560,
+      "uri": "scene.bin"
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_materials_transmission",
+    "KHR_materials_specular"
+  ],
+  "materials": [
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularColorFactor": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "specularFactor": 0.40051497269114605
+        },
+        "KHR_materials_transmission": {
+          "transmissionFactor": 1.0
+        }
+      },
+      "name": "Material.001",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.8,
+          0.8,
+          0.8,
+          0.25
+        ],
+        "roughnessFactor": 0.0
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Material.003",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.0,
+          0.0198468,
+          1.0,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.5
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_transmission": {
+          "transmissionFactor": 1.0
+        }
+      },
+      "name": "Material.002",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          0.25
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.156364
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Object_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 5,
+            "POSITION": 4,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_2",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 9,
+            "POSITION": 8,
+            "TEXCOORD_0": 10
+          },
+          "indices": 11,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "root"
+    },
+    {
+      "children": [
+        3,
+        5,
+        7
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "GLTF_SceneRootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        0.6901765465736389,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.6901765465736389,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.6901765465736389,
+        0.0,
+        0.0,
+        0.6921668648719788,
+        0.010938302613794804,
+        1.0
+      ],
+      "name": "Cylinder_1"
+    },
+    {
+      "mesh": 0,
+      "name": "Object_4"
+    },
+    {
+      "children": [
+        6
+      ],
+      "matrix": [
+        0.2676931619644165,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.19298164546489716,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.2676931619644165,
+        0.0,
+        0.0,
+        4.185741901397705,
+        0.011871538124978542,
+        1.0
+      ],
+      "name": "Cylinder.001_2"
+    },
+    {
+      "mesh": 1,
+      "name": "Object_6"
+    },
+    {
+      "children": [
+        8
+      ],
+      "matrix": [
+        0.6717920303344727,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.6717920303344727,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.6717920303344727,
+        0.0,
+        0.0,
+        0.6921668648719788,
+        0.010938302613794804,
+        1.0
+      ],
+      "name": "Cylinder.002_3"
+    },
+    {
+      "mesh": 2,
+      "name": "Object_8"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}
