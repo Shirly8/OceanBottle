@@ -26,6 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const oceanScreen = `
     <div id="ocean-screen" class="screen">
       ${logo}
+      <div id="ocean-loading" class="ocean-loading">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Loading ocean scene...</p>
+      </div>
       <canvas id="renderCanvas" style="width: 100%; height: 100%; display: block;"></canvas>
       <div id="ocean-ui-overlay">
         <div class="ocean-bottom-content">
@@ -66,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const thirdScreen = `
     <div id="third-screen" class="screen" style="width: 100vw; height: 100vh; padding: 0; margin: 0; overflow: auto; display: flex; flex-direction: column;">
       <iframe style="width: 100%; min-height: 100%; border: none; padding: 0; margin: 0; flex: 1;"
-        src="https://www.canva.com/design/DAGdajMIf_k/ogzpkEWT--Tm9hg9u3vYUQ/view?embed" allowfullscreen>
+        src="/website.html" allowfullscreen>
       </iframe>
     </div>
   `;
@@ -102,9 +106,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Initialize 3D ocean scene
       const canvas = document.getElementById('renderCanvas');
+      const loadingOverlay = document.getElementById('ocean-loading');
       if (canvas) {
         try {
           await initOceanScene(canvas, dailyBottles);
+          
+          // Hide loading overlay once scene is loaded
+          if (loadingOverlay) {
+            loadingOverlay.style.opacity = '0';
+            setTimeout(() => {
+              loadingOverlay.style.display = 'none';
+            }, 500);
+          }
 
           // Show first message immediately
           setTimeout(() => {
@@ -188,6 +201,11 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         } catch (error) {
           console.error('Error initializing ocean scene:', error);
+          // Hide loading overlay if it exists
+          const loadingOverlay = document.getElementById('ocean-loading');
+          if (loadingOverlay) {
+            loadingOverlay.style.display = 'none';
+          }
           // Fallback to second screen if 3D fails
           appContainer.innerHTML = secondScreen;
           setupSecondScreen(dailyBottles, tenYearUsage);
