@@ -4,8 +4,6 @@ An immersive 3D experience that visualizes your plastic bottle usage. Swim throu
 
 ## Video Demo
 
-[Watch the demo](video.mov)
-
 https://github.com/user-attachments/assets/c0a27053-9bd4-4ea3-a088-d39db6fc38b9
 
 ## What is this?
