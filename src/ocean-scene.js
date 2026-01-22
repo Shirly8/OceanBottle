@@ -48,6 +48,9 @@ export async function initOceanScene(canvas, dailyBottleCount) {
   camera.setTarget(new BABYLON.Vector3(0, -5, 0));
   camera.attachControl(canvas, true);
   camera.speed = 0.5;
+
+  // Set cursor to move/drag style
+  canvas.style.cursor = 'move';
   camera.keysUp.push(87);
   camera.keysDown.push(83);
   camera.keysLeft.push(65);
