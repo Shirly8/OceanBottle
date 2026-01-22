@@ -28,7 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
       ${logo}
       <div id="ocean-loading" class="ocean-loading">
         <div class="loading-spinner"></div>
-        <p class="loading-text">Loading ocean scene...</p>
+        <p class="loading-text" id="loading-text">Initializing ocean scene...</p>
+        <div class="loading-progress">
+          <div class="loading-progress-bar" id="loading-progress-bar"></div>
+        </div>
+        <div class="loading-progress">
+          <div class="loading-progress-bar" id="loading-progress-bar"></div>
+        </div>
       </div>
       <canvas id="renderCanvas" style="width: 100%; height: 100%; display: block;"></canvas>
       <div id="ocean-ui-overlay">
@@ -67,13 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   `;
 
-  const thirdScreen = `
-    <div id="third-screen" class="screen" style="width: 100vw; height: 100vh; padding: 0; margin: 0; overflow: auto; display: flex; flex-direction: column;">
-      <iframe style="width: 100%; min-height: 100%; border: none; padding: 0; margin: 0; flex: 1;"
-        src="/website.html" allowfullscreen>
-      </iframe>
-    </div>
-  `;
+  // Navigation function to buy-now page
+  const navigateToBuyNow = () => {
+    window.location.href = '/buy-now.html';
+  };
 
   appContainer.innerHTML = firstScreen;
 
@@ -107,11 +110,30 @@ document.addEventListener('DOMContentLoaded', () => {
       // Initialize 3D ocean scene
       const canvas = document.getElementById('renderCanvas');
       const loadingOverlay = document.getElementById('ocean-loading');
+      const loadingText = document.getElementById('loading-text');
+      const progressBar = document.getElementById('loading-progress-bar');
+      
       if (canvas) {
         try {
+          // Update loading text
+          if (loadingText) loadingText.textContent = 'Setting up 3D environment...';
+          if (progressBar) progressBar.style.width = '20%';
+          
+          // Initialize scene
           await initOceanScene(canvas, dailyBottles);
           
+          // Update progress
+          if (loadingText) loadingText.textContent = 'Loading 3D models...';
+          if (progressBar) progressBar.style.width = '60%';
+          
+          // Small delay to show progress
+          await new Promise(resolve => setTimeout(resolve, 300));
+          
+          if (loadingText) loadingText.textContent = 'Finalizing scene...';
+          if (progressBar) progressBar.style.width = '100%';
+          
           // Hide loading overlay once scene is loaded
+          await new Promise(resolve => setTimeout(resolve, 500));
           if (loadingOverlay) {
             loadingOverlay.style.opacity = '0';
             setTimeout(() => {
@@ -188,10 +210,10 @@ document.addEventListener('DOMContentLoaded', () => {
                       continueButton.classList.remove('cleaning-up');
                       continueButton.disabled = false;
 
-                      // Handle final click
+                      // Handle final click - navigate to buy-now page
                       continueButton.addEventListener('click', () => {
                         disposeOceanScene();
-                        appContainer.innerHTML = thirdScreen;
+                        navigateToBuyNow();
                       }, { once: true });
                     });
                   }
@@ -311,14 +333,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Check if dropped on cart or inside cart
     if (dropzone.id === 'cart' || dropzone.closest('#cart')) {
-      // Successfully dropped bottle into cart - show Canva embed
-      appContainer.innerHTML = thirdScreen;
-
-      // Show the third screen
-      const thirdScreenEl = document.getElementById('third-screen');
-      if (thirdScreenEl) {
-        thirdScreenEl.classList.remove('hidden');
-      }
+      // Successfully dropped bottle into cart - navigate to buy-now page
+      navigateToBuyNow();
     }
   };
 });
