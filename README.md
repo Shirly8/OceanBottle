@@ -23,6 +23,8 @@ Also wanted to learn Babylon.js.
 ## Tech Stack
 
 - **Babylon.js** - 3D ocean rendering with WebGL
+- **Web Speech API** - AI voice narration
+- **Web Audio API** - Underwater ambient sound
 - **Vanilla JS** - Clean ES6+, no framework bloat
 - **Vite** - Fast dev server and bundler
 - **CSS3** - Custom animations and responsive design
@@ -51,6 +53,11 @@ graph LR
         E --> G[Bottles / Fish / Turtles]
     end
 
+    subgraph Audio ["Audio (Web APIs)"]
+        L[Web Speech API] --> M[Voice Narration]
+        N[Web Audio API] --> O[Underwater Ambience]
+    end
+
     subgraph Website ["Product Website (Static HTML)"]
         H[buy-now.html] --> I[Hero + Impact Story]
         I --> J[Product Showcase]
@@ -61,11 +68,14 @@ graph LR
     end
 
     B -->|Initialize scene| D
+    B -->|Trigger narration| L
+    B -->|Play ambience| N
     F -->|User completes experience| H
     J -->|Add to Cart| K
 
     style Frontend fill:#2d3748
     style 3D fill:#1a7bb8
+    style Audio fill:#6b46c1
     style Website fill:#175e8e
     style External fill:#38a169
 ```
