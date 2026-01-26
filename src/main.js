@@ -97,6 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitButton = document.getElementById('submit-button');
   const bottleInput = document.getElementById('bottle-input');
 
+  // Allow Enter key to submit
+  bottleInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      submitButton.click();
+    }
+  });
+
   submitButton.addEventListener('click', async () => {
     const dailyBottles = parseInt(bottleInput.value);
 
@@ -182,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 await spawnOceanBottleLogo();
 
                 continueButton.innerHTML = '<img src="/Images/oceanbottle.png" alt="OceanBottle" class="button-icon" />Move towards the OceanBottle';
-                continueButton.disabled = false;
+                continueButton.disabled = true;
                 logoSpawned = true;
 
                 // Check if camera is close to logo

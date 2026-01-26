@@ -156,13 +156,37 @@ async function loadGLB(filename, scene) {
 }
 
 /**
- * Load all models
+ * Clone a loaded model (TransformNode with children)
+ */
+function cloneModel(original, name) {
+  const clone = original.clone(name, null);
+  return clone;
+}
+
+/**
+ * Load all models - load each unique model once, then clone for additional instances
  */
 async function loadAllModels(scene, bottleCount) {
-  // Load corals (more corals, positioned lower)
+  // Pre-load all unique models once
+  const coralTemplate = await loadGLB('coral.glb', scene);
+  const bottleTemplates = {
+    'waterbottle.glb': await loadGLB('waterbottle.glb', scene),
+    'waterbottle2.glb': await loadGLB('waterbottle2.glb', scene),
+    'waterbottle3.glb': await loadGLB('waterbottle3.glb', scene),
+  };
+  const fishTemplates = {
+    'fish.glb': await loadGLB('fish.glb', scene),
+    'fish2.glb': await loadGLB('fish2.glb', scene),
+    'fish3.glb': await loadGLB('fish3.glb', scene),
+    'fish4.glb': await loadGLB('fish4.glb', scene),
+  };
+  const turtleTemplate = await loadGLB('sea_turtle.glb', scene);
+
+  // Create corals (clone from template)
   for (let i = 0; i < 12; i++) {
-    const coral = await loadGLB('coral.glb', scene);
-    if (coral) {
+    let coral;
+    if (coralTemplate) {
+      coral = i === 0 ? coralTemplate : cloneModel(coralTemplate, `coral_${i}`);
       coral.position = new BABYLON.Vector3(
         (Math.random() - 0.5) * 90,
         -15.5,
@@ -176,13 +200,16 @@ async function loadAllModels(scene, bottleCount) {
     }
   }
 
-  // Load bottles
+  // Create bottles (clone from templates)
   const bottleFiles = ['waterbottle.glb', 'waterbottle2.glb', 'waterbottle3.glb'];
+  const bottleUsageCount = { 'waterbottle.glb': 0, 'waterbottle2.glb': 0, 'waterbottle3.glb': 0 };
   for (let i = 0; i < bottleCount; i++) {
     const filename = bottleFiles[i % bottleFiles.length];
-    const bottle = await loadGLB(filename, scene);
+    const template = bottleTemplates[filename];
 
-    if (bottle) {
+    if (template) {
+      const bottle = bottleUsageCount[filename] === 0 ? template : cloneModel(template, `bottle_${i}`);
+      bottleUsageCount[filename]++;
       setupBottle(bottle, i);
     } else {
       const fallback = createFallbackBottle(scene, i);
@@ -190,12 +217,16 @@ async function loadAllModels(scene, bottleCount) {
     }
   }
 
-  // Load fish (using all fish models)
+  // Create fish (clone from templates)
   const fishFiles = ['fish.glb', 'fish2.glb', 'fish3.glb', 'fish4.glb'];
+  const fishUsageCount = { 'fish.glb': 0, 'fish2.glb': 0, 'fish3.glb': 0, 'fish4.glb': 0 };
   for (let i = 0; i < 15; i++) {
     const filename = fishFiles[i % fishFiles.length];
-    const fishModel = await loadGLB(filename, scene);
-    if (fishModel) {
+    const template = fishTemplates[filename];
+
+    if (template) {
+      const fishModel = fishUsageCount[filename] === 0 ? template : cloneModel(template, `fish_${i}`);
+      fishUsageCount[filename]++;
       setupFish(fishModel, i);
     } else {
       const fallback = createFallbackFish(scene, i);
@@ -203,10 +234,10 @@ async function loadAllModels(scene, bottleCount) {
     }
   }
 
-  // Load turtles (only 2, smaller)
-  for (let i = 0; i < 2; i++) {
-    const turtle = await loadGLB('sea_turtle.glb', scene);
-    if (turtle) {
+  // Create turtles (clone from template)
+  for (let i = 0; i < 5; i++) {
+    if (turtleTemplate) {
+      const turtle = i === 0 ? turtleTemplate : cloneModel(turtleTemplate, `turtle_${i}`);
       setupTurtle(turtle, i);
     } else {
       const fallback = createFallbackTurtle(scene, i);
@@ -257,14 +288,14 @@ function setupFish(fishMesh, i) {
 }
 
 function setupTurtle(turtleMesh, i) {
-  turtleMesh.scaling = new BABYLON.Vector3(0.15, 0.15, 0.15);
+  turtleMesh.scaling = new BABYLON.Vector3(10.0, 10.0, 10.0);
   const baseY = -6 + Math.random() * 10;
   turtleMesh.position.y = baseY;
 
   turtles.push({
     mesh: turtleMesh,
     time: Math.random() * Math.PI * 2,
-    speed: 0.1 + Math.random() * 0.15,
+    speed: 0.4 + Math.random() * 0.3,
     radius: 18 + Math.random() * 15,
     dir: Math.random() > 0.5 ? 1 : -1,
     baseY: baseY,
