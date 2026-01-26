@@ -14,9 +14,11 @@ The experience transitions into a website showcasing [Ocean Bottle](https://ocea
 
 ## Why?
 
-Numbers don't stick. "1,825 bottles/year" means nothing. Swimming through your own plastic waste? That hits different.
+When I first calculated that using just 2 plastic bottles a day adds up to over 700 bottles a year, it felt... off. Like I knew it was bad, but I couldn't actually feel it.
 
-I wanted to make environmental impact **visual and emotional** while learning Babylon.js.
+So I built this. I wanted to know what it would feel like to swim through my own plastic waste. Turns out, it's uncomfortable. And then when you reach the OceanBottle, everything gets cleaned up - because that's literally what they do. Every bottle you buy funds the removal of 1,000 plastic bottles from the ocean.
+
+Also wanted to learn Babylon.js.
 
 ## Tech Stack
 
@@ -37,25 +39,35 @@ Each OceanBottle purchased removes **1,000 bottles (11.368 kg)** of ocean-bound 
 ## Architecture
 
 ```mermaid
-graph TB
-    A[Input Screen] -->|Daily bottle count| B[3D Ocean Scene]
-    B --> C[Spawn Bottles]
-    B --> D[First-Person Camera]
-    C --> E[Swim Through Waste]
-    D --> E
-    E -->|Proximity trigger| F[OceanBottle Logo]
-    F -->|Approach logo| G[Cleanup Animation]
-    G --> H[Website Iframe]
+graph LR
+    subgraph Frontend ["Frontend (Vite + Vanilla JS)"]
+        A[index.html] --> B[main.js]
+        B --> C[app.css]
+    end
 
-    H --> I[Hero Screen]
-    I --> J[Impact Story]
-    J --> K[Product Info]
-    K --> L[Partners]
-    L --> M[Call to Action]
+    subgraph 3D ["3D Engine (Babylon.js)"]
+        D[ocean-scene.js] --> E[GLB Models]
+        D --> F[WebGL Canvas]
+        E --> G[Bottles / Fish / Turtles]
+    end
 
-    style B fill:#1a7bb8
-    style F fill:#b3fd71
-    style H fill:#175e8e
+    subgraph Website ["Product Website (Static HTML)"]
+        H[buy-now.html] --> I[Hero + Impact Story]
+        I --> J[Product Showcase]
+    end
+
+    subgraph External ["External"]
+        K[oceanbottle.co/cart]
+    end
+
+    B -->|Initialize scene| D
+    F -->|User completes experience| H
+    J -->|Add to Cart| K
+
+    style Frontend fill:#2d3748
+    style 3D fill:#1a7bb8
+    style Website fill:#175e8e
+    style External fill:#38a169
 ```
 
 ## Quick Start

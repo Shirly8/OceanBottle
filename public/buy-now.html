@@ -134,5 +134,18 @@
   </section>
 
   <script src="/website.js"></script>
+
+  <!-- Underwater ambient sound -->
+  <audio id="underwater-sound" loop>
+    <source src="/Effects/UnderWater.mp3" type="audio/mpeg">
+  </audio>
+  <script>
+    // Play underwater sound on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById('underwater-sound');
+      audio.volume = 0.3;
+      audio.play().catch(e => console.log('Audio autoplay blocked:', e));
+    });
+  </script>
 </body>
 </html>

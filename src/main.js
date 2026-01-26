@@ -1,6 +1,63 @@
 import './app.css';
 import { initOceanScene, disposeOceanScene, hideBottles, spawnOceanBottleLogo, checkCameraProximity, getOceanBottleLogo, fadeOutLogo } from './ocean-scene.js';
 
+// Text-to-speech function with male voice
+const speak = (text) => {
+  if ('speechSynthesis' in window) {
+    // Cancel any ongoing speech
+    speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.rate = 0.9;
+    utterance.pitch = 0.8; // Lower pitch for deeper voice
+    utterance.volume = 0.7;
+
+    // Try to find an American male voice
+    const voices = speechSynthesis.getVoices();
+    const americanVoice = voices.find(voice =>
+      voice.name.includes('Aaron') ||
+      voice.name.includes('Tom') ||
+      voice.name.includes('Evan') ||
+      voice.name.includes('Fred') ||
+      (voice.name.includes('Google') && voice.name.includes('US')) ||
+      (voice.lang === 'en-US' && voice.name.toLowerCase().includes('male'))
+    ) || voices.find(voice =>
+      voice.lang === 'en-US'
+    );
+
+    if (americanVoice) {
+      utterance.voice = americanVoice;
+    }
+
+    speechSynthesis.speak(utterance);
+  }
+};
+
+// Pre-load voices (they load asynchronously)
+if ('speechSynthesis' in window) {
+  speechSynthesis.getVoices();
+  speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
+}
+
+// Underwater ambient sound
+let underwaterAudio = null;
+
+const playUnderwaterSound = () => {
+  if (!underwaterAudio) {
+    underwaterAudio = new Audio('/Effects/UnderWater.mp3');
+    underwaterAudio.loop = true;
+    underwaterAudio.volume = 0.4;
+  }
+  underwaterAudio.play().catch(e => console.log('Audio play error:', e));
+};
+
+const stopUnderwaterSound = () => {
+  if (underwaterAudio) {
+    underwaterAudio.pause();
+    underwaterAudio.currentTime = 0;
+  }
+};
+
 // Wait until the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
   const appContainer = document.getElementById('app');
@@ -148,11 +205,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 500);
           }
 
+          // Start underwater ambient sound
+          playUnderwaterSound();
+
           // Show first message immediately
           setTimeout(() => {
             const impactTitle = document.getElementById('impact-title');
             if (impactTitle) {
               impactTitle.classList.add('fade-in');
+              speak('Your daily plastic usage is just a drop in the ocean, but it adds up.');
             }
           }, 500);
 
@@ -162,17 +223,19 @@ document.addEventListener('DOMContentLoaded', () => {
             if (impactDetails) {
               impactDetails.classList.remove('hidden');
               impactDetails.classList.add('fade-in');
+              speak(`In just five years, your plastic use could add up to ${tenYearUsage} bottles.`);
             }
           }, 5500);
 
-          // Show button 5 seconds after the second message (10.5 seconds total)
+          // Show button 9 seconds after the second message (14.5 seconds total)
           setTimeout(() => {
             const continueButton = document.getElementById('continue-button');
             if (continueButton) {
               continueButton.classList.remove('hidden');
               continueButton.classList.add('fade-in');
+              speak('Press to buy an OceanBottle and see what it can do.');
             }
-          }, 10500);
+          }, 14500);
 
           // Handle continue button - spawn logo and create proximity-based interaction
           const continueButton = document.getElementById('continue-button');
@@ -191,6 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 continueButton.innerHTML = '<img src="/Images/oceanbottle.png" alt="OceanBottle" class="button-icon" />Move towards the OceanBottle';
                 continueButton.disabled = true;
                 logoSpawned = true;
+                speak('Move towards the OceanBottle.');
 
                 // Check if camera is close to logo
                 proximityCheckInterval = setInterval(() => {
@@ -198,6 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     clearInterval(proximityCheckInterval);
                     continueButton.disabled = true;
                     continueButton.classList.add('cleaning-up');
+                    speak('Cleaning the ocean up.');
 
                     // Animate the "..." in the button
                     let dotCount = 0;

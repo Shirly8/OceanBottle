@@ -631,7 +631,7 @@ button:active {
 
 .ocean-title {
   font-family: 'Work Sans', sans-serif;
-  font-size: 0.85rem;
+  font-size: 1.3rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
   text-align: center;
@@ -644,13 +644,13 @@ button:active {
 
 .ocean-subtitle {
   font-family: 'Work Sans', sans-serif;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: white;
   text-align: center;
   letter-spacing: 0.2px;
   line-height: 1.4;
-  margin: 0 0 8px 0;
+  margin: 0 0 12px 0;
   padding: 0;
   opacity: 0;
 }
@@ -659,20 +659,20 @@ button:active {
   font-weight: 600;
   color: #1a365d;
   background-color: #7dd3fc;
-  padding: 4px 8px;
+  padding: 6px 12px;
   border-radius: 4px;
   font-size: 1.2em;
   display: inline-block;
 }
 
 .continue-btn {
-  padding: 10px 24px;
+  padding: 14px 32px;
   background: rgba(255, 255, 255, 0.95);
   color: #1a365d;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   transition: all 0.25s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -681,7 +681,7 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .continue-btn.hidden {
@@ -751,11 +751,11 @@ button:active {
 
 @media (max-width: 768px) {
   .ocean-title {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .ocean-subtitle {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
 
   #ocean-ui-overlay {
@@ -763,8 +763,8 @@ button:active {
   }
 
   .continue-btn {
-    padding: 9px 20px;
-    font-size: 12px;
+    padding: 12px 24px;
+    font-size: 14px;
   }
 
   .keyboard-hint {
