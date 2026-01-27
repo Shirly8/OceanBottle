@@ -760,6 +760,18 @@ button:active {
 
   #ocean-ui-overlay {
     padding: 0 15px 40px 15px;
+    justify-content: flex-start;
+    padding-top: 60px;
+  }
+
+  .ocean-bottom-content {
+    position: fixed;
+    top: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    gap: 4px;
   }
 
   .continue-btn {
@@ -770,6 +782,7 @@ button:active {
   .keyboard-hint {
     top: 16px;
     right: 16px;
+    display: none;
   }
 
   .keyboard-icon {
@@ -779,6 +792,96 @@ button:active {
 
   .keyboard-label {
     font-size: 0.6rem;
+  }
+
+  /* Rotate phone hint for portrait mobile */
+  .rotate-phone-hint {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 25;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .rotate-phone-hint img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+/* Landscape mode mobile - show walk button */
+@media (max-width: 768px) and (orientation: landscape) {
+  #ocean-ui-overlay {
+    justify-content: flex-end;
+    padding: 0;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+
+  .ocean-bottom-content {
+    position: fixed;
+    top: auto;
+    bottom: 80px;
+    left: auto;
+    right: 20px;
+    transform: none;
+    width: auto;
+    max-width: none;
+  }
+
+  .keyboard-hint {
+    display: none !important;
+  }
+
+  .rotate-phone-hint {
+    display: none !important;
+  }
+
+  /* Walk button for landscape */
+  .walk-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid white;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 25;
+    transition: all 0.3s ease;
+    touch-action: none;
+  }
+
+  .walk-btn:active {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #7dd3fc;
+  }
+
+  .walk-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
   }
 }
 
