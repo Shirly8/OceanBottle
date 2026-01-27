@@ -105,6 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <img src="/Images/keyboard_arrow.png" alt="Arrow keys" class="keyboard-icon">
         <span class="keyboard-label">Move Around</span>
       </div>
+      <div class="rotate-phone-hint" id="rotate-phone-hint">
+        <img src="/Images/rotatePhone.png" alt="Rotate phone" />
+      </div>
+      <button id="walk-btn" class="walk-btn hidden">WALK</button>
     </div>
   `;
 
@@ -293,6 +297,68 @@ document.addEventListener('DOMContentLoaded', () => {
               }
             });
           }
+
+          // Mobile device orientation handling
+          const isMobile = window.innerWidth <= 768;
+          const rotatePhoneHint = document.getElementById('rotate-phone-hint');
+          const walkBtn = document.getElementById('walk-btn');
+          let walkInterval = null;
+
+          function handleOrientationChange() {
+            const isPortrait = window.innerHeight > window.innerWidth;
+
+            if (isMobile) {
+              if (isPortrait) {
+                // Portrait mode - show rotate hint
+                if (rotatePhoneHint) rotatePhoneHint.style.display = 'flex';
+                if (walkBtn) walkBtn.classList.add('hidden');
+                if (walkInterval) clearInterval(walkInterval);
+              } else {
+                // Landscape mode - show walk button
+                if (rotatePhoneHint) rotatePhoneHint.style.display = 'none';
+                if (walkBtn && logoSpawned) walkBtn.classList.remove('hidden');
+              }
+            }
+          }
+
+          // Listen for orientation changes
+          window.addEventListener('orientationchange', handleOrientationChange);
+          window.addEventListener('resize', handleOrientationChange);
+          handleOrientationChange(); // Initial check
+
+          // Walk button functionality
+          if (walkBtn) {
+            walkBtn.addEventListener('touchstart', (e) => {
+              e.preventDefault();
+              walkBtn.style.background = 'rgba(255, 255, 255, 0.15)';
+
+              if (walkInterval) clearInterval(walkInterval);
+              walkInterval = setInterval(() => {
+                // Move camera towards logo (forward direction)
+                const moveDirection = camera.getDirection(BABYLON.Axis.Z);
+                camera.position.addInPlace(moveDirection.scale(0.8));
+              }, 50);
+            });
+
+            walkBtn.addEventListener('touchend', (e) => {
+              e.preventDefault();
+              walkBtn.style.background = 'transparent';
+              if (walkInterval) {
+                clearInterval(walkInterval);
+                walkInterval = null;
+              }
+            });
+
+            walkBtn.addEventListener('touchcancel', (e) => {
+              e.preventDefault();
+              walkBtn.style.background = 'transparent';
+              if (walkInterval) {
+                clearInterval(walkInterval);
+                walkInterval = null;
+              }
+            });
+          }
+
         } catch (error) {
           console.error('Error initializing ocean scene:', error);
           // Hide loading overlay if it exists
