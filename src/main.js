@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="keyboard-hint">
         <img src="/Images/keyboard_arrow.png" alt="Arrow keys" class="keyboard-icon">
-        <span class="keyboard-label">Move Around</span>
+        <span class="keyboard-label" id="movement-hint">Move Around</span>
       </div>
       <div class="rotate-phone-hint" id="rotate-phone-hint">
         <img src="/Images/rotatePhone.png" alt="Rotate phone" />
@@ -173,6 +173,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Show ocean screen with 3D visualization
       appContainer.innerHTML = oceanScreen;
+
+      // Update hint text for mobile
+      const isMobile = window.innerWidth <= 768;
+      const movementHint = document.getElementById('movement-hint');
+      if (isMobile && movementHint) {
+        movementHint.textContent = 'Drag to Move';
+      }
+
       document.getElementById('ocean-ten-year-usage').textContent = tenYearUsage;
 
       // Initialize 3D ocean scene
