@@ -47,7 +47,9 @@ export async function initOceanScene(canvas, dailyBottleCount) {
   camera = new BABYLON.UniversalCamera('camera', new BABYLON.Vector3(0, -2, 35), scene);
   camera.setTarget(new BABYLON.Vector3(0, -5, 0));
   camera.attachControl(canvas, true);
-  camera.speed = 0.5;
+  // Faster movement on mobile, normal on desktop
+  const isMobileDevice = window.innerWidth <= 768;
+  camera.speed = isMobileDevice ? 1.2 : 0.5;
 
   // Set cursor to move/drag style
   canvas.style.cursor = 'move';

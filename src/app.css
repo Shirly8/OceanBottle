@@ -751,11 +751,11 @@ button:active {
 
 @media (max-width: 768px) {
   .ocean-title {
-    font-size: 1rem;
+    font-size: 0.65rem;
   }
 
   .ocean-subtitle {
-    font-size: 1.1rem;
+    font-size: 0.7rem;
   }
 
   #ocean-ui-overlay {
@@ -782,7 +782,7 @@ button:active {
   .keyboard-hint {
     top: 16px;
     right: 16px;
-    display: none;
+    display: flex;
   }
 
   .keyboard-icon {
@@ -796,22 +796,7 @@ button:active {
 
   /* Rotate phone hint for portrait mobile */
   .rotate-phone-hint {
-    position: fixed;
-    bottom: 30px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 25;
-    animation: pulse 2s ease-in-out infinite;
-  }
-
-  .rotate-phone-hint img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    display: none !important;
   }
 }
 
@@ -843,36 +828,9 @@ button:active {
     display: none !important;
   }
 
-  /* Walk button for landscape */
+  /* Walk button - hide on all mobile */
   .walk-btn {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 3px solid white;
-    background: transparent;
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 25;
-    transition: all 0.3s ease;
-    touch-action: none;
-  }
-
-  .walk-btn:active {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #7dd3fc;
-  }
-
-  .walk-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+    display: none !important;
   }
 }
 
