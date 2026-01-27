@@ -781,18 +781,18 @@ button:active {
 
   .keyboard-hint {
     top: auto;
-    bottom: 20px;
+    bottom: 80px;
     right: 16px;
     display: flex;
   }
 
   .keyboard-icon {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
   }
 
   .keyboard-label {
-    font-size: 0.6rem;
+    font-size: 0.75rem;
   }
 
   /* Rotate phone hint for portrait mobile */
