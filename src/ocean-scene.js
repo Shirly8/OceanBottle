@@ -51,7 +51,7 @@ export async function initOceanScene(canvas, dailyBottleCount) {
   const isMobileDevice = window.innerWidth <= 768;
   camera.speed = isMobileDevice ? 0.8 : 0.5;
   // Faster dragging/rotation on mobile for better responsiveness
-  camera.angularSensibility = isMobileDevice ? 350 : 1000;
+  camera.angularSensibility = isMobileDevice ? 150 : 1000;
 
   // Set cursor to move/drag style
   canvas.style.cursor = 'move';

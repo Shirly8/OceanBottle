@@ -782,7 +782,7 @@ button:active {
   .keyboard-hint {
     top: auto;
     bottom: 80px;
-    right: 16px;
+    right: 24px;
     display: flex;
   }
 
