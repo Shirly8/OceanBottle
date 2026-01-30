@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/buy-now",
+      "destination": "/buy-now.html"
+    },
+    {
+      "source": "/buy-now/",
+      "destination": "/buy-now.html"
+    }
+  ]
+}
