@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Navigation function to buy-now page
   const navigateToBuyNow = () => {
-    window.location.href = '/buy-now.html';
+    window.location.href = '/buy-now';
   };
 
   appContainer.innerHTML = firstScreen;

@@ -285,8 +285,12 @@ body {
 /* Screen 3 - Diagram */
 .section-diagram {
     background-color: #175e8e;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 80px 40px;
+    min-height: 100vh;
 }
 
 .diagram-heading {
