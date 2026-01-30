@@ -31,3 +31,5 @@ dist-ssr
 
 # Allow demo video
 !video.mp4
+# Allow website background videos
+!public/Images/Website/background*.mp4
