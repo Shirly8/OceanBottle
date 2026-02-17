@@ -12,13 +12,15 @@ You enter how many plastic bottles you use daily. We spawn that many bottles int
 
 The experience transitions into a website showcasing [Ocean Bottle](https://oceanbottle.co/) - a company funding ocean cleanup with every purchase.
 
+## The Campaign: Your Bottle. Your Legacy
+
+This project was developed for **BUSI 3205: Marketing Communication** as a campaign case study for OceanBottle's "Your Bottle. Your Legacy" initiative. The core insight: most people know plastic pollution is bad, but abstract statistics don't drive behavior change. The campaign transforms data into emotion.
+
+It's about combining awareness with empowerment—showing that individual action matters in systemic change.
+
 ## Why?
 
-When I first calculated that using just 2 plastic bottles a day adds up to over 700 bottles a year, it felt... off. Like I knew it was bad, but I couldn't actually feel it.
-
-So I built this. I wanted to know what it would feel like to swim through my own plastic waste. Turns out, it's uncomfortable. And then when you reach the OceanBottle, everything gets cleaned up - because that's literally what they do. Every bottle you buy funds the removal of 1,000 plastic bottles from the ocean.
-
-Also wanted to learn Babylon.js.
+When I first calculated that using just 2 plastic bottles a day adds up to over 700 bottles a year, it felt... off. Like I knew it was bad, but I couldn't actually feel it. So I built this to explore how interactive design can bridge that gap between knowing and feeling. Also wanted to learn Babylon.js.
 
 ## Tech Stack
 
