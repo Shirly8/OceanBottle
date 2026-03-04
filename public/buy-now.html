@@ -3,154 +3,325 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ocean Bottle - Make an Impact</title>
+  <title>OceanBottle - Make an Impact</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/website.css">
-  <style>
-    /* Reset */
-    html { scroll-behavior: smooth; }
-    body { overflow-x: hidden; }
-  </style>
 </head>
 <body>
-  <!-- Screen 1 -->
-  <section id="screen1" class="section">
-    <video autoplay muted loop playsinline class="background-video">
-      <source src="/Images/Website/background1.mp4" type="video/mp4">
-    </video>
-    <div class="overlay"></div>
 
-    <nav class="navbar">
-      <a href="https://oceanbottle.co/" class="logo-link">
-        <img src="/Images/Website/OceanBottleLogo.png" alt="Ocean Bottle Logo" class="nav-logo">
-      </a>
-      <a href="https://oceanbottle.co/checkouts/cn/hWN7srXPoUJeNDilv7SsRUcE/en-ca?_r=AQABDG1gU1sI1wEGJF89_caCvOFrxYlJ4RdEjBKuvqACdWk&auto_redirect=false&edge_redirect=true&skip_shop_pay=true" class="cart-link">
-        <img src="/Images/Website/cart.png" alt="Cart" class="nav-cart">
-        <span class="cart-badge">1</span>
-      </a>
-    </nav>
 
-    <div class="content-wrapper">
-      <div class="left-content">
-        <h1 class="main-heading">You've just helped remove <span class="highlight">1000 bottles</span> from the ocean</h1>
-        <h2 class="subheading">One bottle waiting in the cart for you<br>One giant wave of change for the planet</h2>
-        <div class="button-group">
-          <a href="https://oceanbottle.co/checkouts/cn/hWN7srXPoUJeNDilv7SsRUcE/en-ca?_r=AQABDG1gU1sI1wEGJF89_caCvOFrxYlJ4RdEjBKuvqACdWk&auto_redirect=false&edge_redirect=true&skip_shop_pay=true" class="btn btn-primary">CHECK OUT NOW</a>
-          <a href="https://oceanbottle.co/collections" class="btn btn-secondary">SEE MORE</a>
-        </div>
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://oceanbottle.co/" class="nav__logo">
+    <span>ocean</span><span>bottle</span>
+  </a>
+  <a href="https://oceanbottle.co/checkouts/cn/hWN7srXPoUJeNDilv7SsRUcE/en-ca?_r=AQABDG1gU1sI1wEGJF89_caCvOFrxYlJ4RdEjBKuvqACdWk&auto_redirect=false&edge_redirect=true&skip_shop_pay=true" class="nav__cart" aria-label="Cart, 1 item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <path d="M16 10a4 4 0 01-8 0"/>
+    </svg>
+    <span class="nav__dot">1</span>
+  </a>
+</nav>
+
+
+
+<!-- ══════════════════════
+     S1 · RESULT
+     Big number, headline, bottle on right
+══════════════════════ -->
+<section class="screen" id="s-result">
+  <video autoplay muted loop playsinline class="screen__bg">
+    <source src="/Images/Website/background1.mp4" type="video/mp4">
+  </video>
+
+  <div class="result-wrap">
+
+    <!-- left — text -->
+    <div class="result-left">
+      <div class="result-num-row">
+        <span class="result-number" id="result-number">1,000</span>
+        <span class="result-unit">bottles</span>
       </div>
-      <div class="right-content">
-        <img src="/Images/Website/OceanBottleBlue.png" alt="Ocean Bottle Blue" class="bottle-image">
-      </div>
-    </div>
-  </section>
 
-  <!-- Screen 2 -->
-  <section id="screen2" class="section">
-    <video autoplay muted loop playsinline class="background-video">
-      <source src="/Images/Website/background2.mp4" type="video/mp4">
-    </video>
-    <div class="overlay"></div>
+      <div class="result-copy">
+        <h2 class="result-headline">
+          You've just helped remove<br>
+          <span class="accent" id="result-hl">1,000 bottles</span><br>
+          from the ocean
+        </h2>
+        <p class="result-aside">
+          One bottle waiting in the cart for you.<br>
+          One giant wave of change for the planet.
+        </p>
 
-    <div class="content-wrapper">
-      <div class="left-content-full">
-        <h1 class="main-heading">This is where<br>your plastic goes</h1>
-        <p class="description">Studies show that just 14 pieces of plastic can be enough to kill a sea turtle. Your current plastic use have done more damage than that. But your OceanBottle can make a difference. <span class="highlight-green">OceanBottle has funded the removal of over 17,802,997 kg of ocean bound plastic bottles from waterways.</span> By purchasing today, users contribute to this ongoing mission</p>
-        <a href="#" class="btn btn-primary">WHAT YOUR PURCHASE TODAY CAN DO</a>
-      </div>
-      <div class="right-content-video">
-      </div>
-    </div>
-  </section>
-
-  <!-- Screen 3 -->
-  <section id="screen3" class="section-diagram">
-    <h1 class="diagram-heading">YOUR BOTTLE. YOUR IMPACT AT A GLANCE</h1>
-    <div class="diagram-container">
-      <img src="/Images/Website/diagram.png" alt="Bottle Impact Diagram" class="diagram-image">
-    </div>
-  </section>
-
-  <!-- Screen 4 - Process -->
-  <section id="screen4" class="section-process">
-    <div class="process-wrapper">
-      <div class="process-left">
-        <img src="/Images/Website/process.png" alt="Ocean Bottle Process" class="process-image">
-      </div>
-      <div class="process-right">
-        <div class="process-item">
-          <h2 class="process-heading">Environmental lobbying</h2>
-          <p class="process-description">We push for governments to protect oceans and marine life. This includes improved recycling infrastructure, collectors benefits and traceability practices in Americas, Africa, and Asia.</p>
-          <a href="https://www.repurpose.global/" target="_blank" class="partner-link">
-            <img src="/Images/Website/partner1.png" alt="rePurpose Partner" class="partner-image">
+        <!-- cta buttons -->
+        <div class="result-ctas">
+          <a href="https://oceanbottle.co/checkouts/cn/hWN7srXPoUJeNDilv7SsRUcE/en-ca?_r=AQABDG1gU1sI1wEGJF89_caCvOFrxYlJ4RdEjBKuvqACdWk&auto_redirect=false&edge_redirect=true&skip_shop_pay=true" class="btn btn--fill">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            Check out now
           </a>
-        </div>
-
-        <div class="process-item">
-          <h2 class="process-heading">Coastal Clean-ups</h2>
-          <p class="process-description">Funding allocated to our collection partners. Our global partners organizes cleanups, plastic waste collections clear litter around coastlines.</p>
-          <a href="http://www.plasticbank.com" target="_blank" class="partner-link">
-            <img src="/Images/Website/partner2.png" alt="Plastic Bank Partner" class="partner-image">
-          </a>
-        </div>
-
-        <div class="process-item">
-          <h2 class="process-heading">Information campaigns</h2>
-          <p class="process-description">Our partners send us verified collection data where we share reports, fact sheets, and media on the state of our ocean.</p>
-          <a href="https://www.plasticsforchange.org" target="_blank" class="partner-link">
-            <img src="/Images/Website/partner3.png" alt="Ocean Change Partner" class="partner-image">
-          </a>
+          <a href="https://oceanbottle.co/collections" class="btn btn--line">See more</a>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Screen 5 - Story -->
-  <section id="screen5" class="section">
-    <video autoplay muted loop playsinline class="background-video">
-      <source src="/Images/Website/background3.mp4" type="video/mp4">
-    </video>
-    <div class="overlay"></div>
+    <!-- right — bottle -->
+    <div class="result-right">
+      <img src="/Images/Website/OceanBottleBlue.png" alt="OceanBottle" class="result-bottle">
+    </div>
 
-    <nav class="navbar">
-      <a href="https://oceanbottle.co/" class="logo-link">
-        <img src="/Images/Website/OceanBottleLogo.png" alt="Ocean Bottle Logo" class="nav-logo">
-      </a>
-      <a href="https://oceanbottle.co/checkouts/cn/hWN7srXPoUJeNDilv7SsRUcE/en-ca?_r=AQABDG1gU1sI1wEGJF89_caCvOFrxYlJ4RdEjBKuvqACdWk&auto_redirect=false&edge_redirect=true&skip_shop_pay=true" class="cart-link">
-        <img src="/Images/Website/cart.png" alt="Cart" class="nav-cart">
-        <span class="cart-badge">1</span>
-      </a>
-    </nav>
+  </div>
+</section>
 
-    <div class="content-wrapper story-wrapper">
-      <div class="left-content">
-        <h1 class="main-heading">Behind every OceanBottle tells a story</h1>
-        <p class="story-description">A story of restored rivers, waterways, wildlife. Your bottle is part of that story. Join our movement today</p>
-        <div class="button-group">
-          <a href="https://oceanbottle.co/collections" class="btn btn-primary">BUY NOW</a>
-          <a href="https://ocean-bottle-nine.vercel.app/" class="btn btn-secondary">RESTART</a>
+
+
+<!-- ══════════════════════
+     S2 · WHERE PLASTIC GOES
+     Turtle bg, ghost number, impact stats
+══════════════════════ -->
+<section class="screen" id="s-impact">
+  <video autoplay muted loop playsinline class="screen__bg">
+    <source src="/Images/Website/background2.mp4" type="video/mp4">
+  </video>
+
+  <div class="impact-ghost" aria-hidden="true">14</div>
+
+  <div class="impact-body">
+    <div class="impact-eyebrow fade">The reality</div>
+
+    <h2 class="impact-heading fade">
+      This is where<br>your plastic goes
+    </h2>
+
+    <div class="impact-stat fade">
+      <span class="impact-stat-n">14</span>
+      <p class="impact-stat-l">pieces of plastic can kill a sea turtle</p>
+    </div>
+
+    <p class="impact-text fade">
+      Your current plastic use has done more damage than that.
+      But your OceanBottle can make a difference.
+      <span class="accent">OceanBottle has funded the removal of over 17,802,997 kg of ocean-bound plastic from waterways.</span>
+      By purchasing today, you join this ongoing mission.
+    </p>
+
+    <a href="#s-specs" class="btn btn--fill fade" style="align-self: flex-start">
+      What your purchase can do
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+
+
+<!-- ══════════════════════
+     S3 · SPECS
+     Bottle diagram with annotations
+══════════════════════ -->
+<section class="screen" id="s-specs">
+  <div class="specs-wrap">
+
+    <div class="specs-head fade">
+      <span class="specs-label">Product overview</span>
+      <h2 class="specs-title">Your bottle. Your impact at a glance.</h2>
+    </div>
+
+    <div class="specs-diagram">
+
+      <!-- left specs -->
+      <div class="specs-col specs-col-l">
+        <div class="spec">
+          <div class="spec-val">11.368 kg</div>
+          <div class="spec-desc">ocean-bound plastic collected</div>
+        </div>
+        <div class="spec">
+          <div class="spec-val">3 partners</div>
+          <div class="spec-desc">global collection network</div>
+        </div>
+        <div class="spec">
+          <div class="spec-val">6h / 18h</div>
+          <div class="spec-desc">hot / chilled insulation</div>
         </div>
       </div>
-      <div class="right-content">
+
+      <!-- center bottle -->
+      <div class="specs-col specs-col-c">
+        <img src="/Images/Website/OceanBottleBlue.png" alt="OceanBottle 500ml"
+             style="width:220px; filter:drop-shadow(0 18px 44px rgba(0,0,0,0.35))">
+        <span class="specs-size">500ml</span>
+      </div>
+
+      <!-- right specs -->
+      <div class="specs-col specs-col-r">
+        <div class="spec">
+          <div class="spec-val">65%</div>
+          <div class="spec-desc">recycled materials</div>
+        </div>
+        <div class="spec">
+          <div class="spec-val">90%</div>
+          <div class="spec-desc">recycled stainless steel</div>
+        </div>
+        <div class="spec">
+          <div class="spec-val">156+</div>
+          <div class="spec-desc">single-use bottles replaced per year</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ══════════════════════
+     S4 · PARTNERS
+     Three rows, editorial list
+══════════════════════ -->
+<section class="screen" id="s-partners">
+  <div class="partners-wrap">
+
+    <!-- header -->
+    <div class="partners-hd">
+      <div style="display: flex; flex-direction: column; gap: 0.75rem">
+        <span class="partners-eyebrow fade">How your purchase creates change</span>
+        <h2 class="partners-title fade">Three ways we act</h2>
+      </div>
+      <p class="partners-desc fade">
+        Every OceanBottle funds a chain of action — from policy to coastline.
+      </p>
+    </div>
+
+    <!-- two column: sticky image + partner rows -->
+    <div class="partners-grid">
+
+      <!-- left — sticky process image -->
+      <div class="partners-img">
+        <img src="/Images/Website/process.png" alt="Ocean Bottle Process">
+      </div>
+
+      <!-- right — partner rows -->
+      <div class="partners-list">
+
+        <div class="partner">
+          <div class="p-content">
+            <span class="p-idx">01</span>
+            <h3 class="p-title">Environmental lobbying</h3>
+            <p class="p-desc">We push governments to protect oceans — improved recycling infrastructure, collector benefits, and traceability across the Americas, Africa, and Asia.</p>
+            <a href="https://www.repurpose.global/" target="_blank">
+              <img class="p-logo" src="/Images/Website/partner1.png" alt="rePurpose">
+            </a>
+          </div>
+        </div>
+
+        <div class="partner">
+          <div class="p-content">
+            <span class="p-idx">02</span>
+            <h3 class="p-title">Coastal clean-ups</h3>
+            <p class="p-desc">Funding goes directly to collection partners. Global teams organise clean-ups and plastic waste collections that clear litter around coastlines.</p>
+            <a href="http://www.plasticbank.com" target="_blank">
+              <img class="p-logo" src="/Images/Website/partner2.png" alt="Plastic Bank">
+            </a>
+          </div>
+        </div>
+
+        <div class="partner">
+          <div class="p-content">
+            <span class="p-idx">03</span>
+            <h3 class="p-title">Information campaigns</h3>
+            <p class="p-desc">Partners send us verified collection data. We publish reports, fact sheets, and media on the real state of our ocean — turning data into global awareness.</p>
+            <a href="https://www.plasticsforchange.org" target="_blank">
+              <img class="p-logo" src="/Images/Website/partner3.png" alt="Plastic for Change">
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <script src="/website.js"></script>
 
-  <!-- Underwater ambient sound -->
-  <audio id="underwater-sound" loop>
-    <source src="/Effects/UnderWater.mp3" type="audio/mpeg">
-  </audio>
-  <script>
-    // Play underwater sound on page load
-    document.addEventListener('DOMContentLoaded', () => {
-      const audio = document.getElementById('underwater-sound');
-      audio.volume = 0.3;
-      audio.play().catch(e => console.log('Audio autoplay blocked:', e));
-    });
-  </script>
+
+<!-- ══════════════════════
+     S5 · FINAL CTA
+     Video bg, big headline, buy now
+══════════════════════ -->
+<section class="screen" id="s-cta">
+  <video autoplay muted loop playsinline class="screen__bg">
+    <source src="/Images/Website/background3.mp4" type="video/mp4">
+  </video>
+
+  <div class="cta-body">
+    <span class="cta-eyebrow fade">Join the movement</span>
+
+    <h2 class="cta-hl fade">
+      Behind every OceanBottle
+      <span class="accent">tells a story</span>
+    </h2>
+
+    <p class="cta-sub fade">
+      A story of restored rivers, waterways, and wildlife.<br>
+      Your bottle is part of that story.
+    </p>
+
+    <!-- cta buttons -->
+    <div class="cta-btns fade">
+      <a href="https://oceanbottle.co/collections" class="btn btn--fill">
+        Buy now
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="/" class="btn btn--line">Restart</a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <div class="ticker-chunk">
+      <span class="ticker-val">17,802,997 kg</span>
+      <span class="ticker-text">ocean plastic removed</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-val">156 bottles</span>
+      <span class="ticker-text">replaced per year</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-val">90%</span>
+      <span class="ticker-text">recycled stainless steel</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-val">3 global partners</span>
+      <span class="ticker-text">collecting worldwide</span>
+      <span class="ticker-dot"></span>
+    </div>
+    <div class="ticker-chunk">
+      <span class="ticker-val">17,802,997 kg</span>
+      <span class="ticker-text">ocean plastic removed</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-val">156 bottles</span>
+      <span class="ticker-text">replaced per year</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-val">90%</span>
+      <span class="ticker-text">recycled stainless steel</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-val">3 global partners</span>
+      <span class="ticker-text">collecting worldwide</span>
+      <span class="ticker-dot"></span>
+    </div>
+  </div>
+</div>
+
+
+<!-- underwater ambient -->
+<audio id="underwater-sound" loop>
+  <source src="/Effects/UnderWater.mp3" type="audio/mpeg">
+</audio>
+
+
+<script src="/website.js"></script>
 </body>
 </html>

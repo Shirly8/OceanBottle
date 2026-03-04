@@ -1,44 +1,29 @@
-// Smooth scroll behavior for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
-});
-
-// Ensure videos autoplay properly
+// autoplay videos
 document.addEventListener('DOMContentLoaded', () => {
-  const videos = document.querySelectorAll('.background-video');
-
-  videos.forEach(video => {
+  document.querySelectorAll('.screen__bg').forEach(video => {
     video.muted = true;
-    video.play().catch(error => {
-      console.log('Video autoplay prevented:', error);
-    });
+    video.play().catch(e => console.log('Video autoplay prevented:', e));
   });
+
+
+  // play ambient sound
+  const audio = document.getElementById('underwater-sound');
+  if (audio) {
+    audio.volume = 0.3;
+    audio.play().catch(e => console.log('Audio autoplay blocked:', e));
+  }
 });
 
-// Intersection Observer for scroll animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -100px 0px'
-};
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('fade-in');
+
+// scroll reveals — fade, spec, partner elements
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('on');
+      io.unobserve(e.target);
     }
   });
-}, observerOptions);
+}, { threshold: 0.1 });
 
-// Observe sections for fade-in effects
-document.querySelectorAll('.section').forEach(section => {
-  observer.observe(section);
-});
+document.querySelectorAll('.fade, .spec, .partner').forEach(el => io.observe(el));
