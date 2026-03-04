@@ -242,21 +242,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // swap to ocean screen
     appContainer.innerHTML = oceanScreen;
 
-
-    // mobile hint
-    const isMobile = window.innerWidth <= 768;
-    const movementHint = document.getElementById('movement-hint');
-    if (isMobile && movementHint) movementHint.textContent = 'Drag to Move';
-
-    document.getElementById('ocean-five-year-usage').textContent = fiveYearUsage.toLocaleString();
-
-
-    // init 3D scene
     const canvas = document.getElementById('renderCanvas');
+    const loadingOverlay = document.getElementById('ocean-loading');
+    const isMobile = window.innerWidth <= 768;
 
     if (canvas) {
       try {
+        // init 3D scene — wait for models to load
         await initOceanScene(canvas, count);
+
+        // hide loading overlay
+        if (loadingOverlay) {
+          loadingOverlay.style.opacity = '0';
+          setTimeout(() => {
+            if (loadingOverlay) loadingOverlay.style.display = 'none';
+          }, 500);
+        }
+
+        // mobile hint
+        const movementHint = document.getElementById('movement-hint');
+        if (isMobile && movementHint) movementHint.textContent = 'Drag to Move';
+
+        document.getElementById('ocean-five-year-usage').textContent = fiveYearUsage.toLocaleString();
 
         // start underwater sound
         playUnderwaterSound();
