@@ -110,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
 
-      <p class="scene-cap">Your daily plastic usage is just a drop in the ocean, but it adds up.</p>
     </div>
   `;
 
